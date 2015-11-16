@@ -1,0 +1,13 @@
+def isSubstring(s1,s2):
+    return s1.find(s2)>-1
+
+def isRotation(s3,s4):
+    if len(s3) != len(s4):
+        return False
+    doubles3 = s3+s3
+    return isSubstring(doubles3, s4) 
+    
+if __name__ == '__main__':
+    print(isRotation('testTrue', 'uetestTr'))  # True
+    print(isRotation('testFalse', 'FalTestse'))  # False
+    print(isRotation('testFalse', 'Falsetest')) #True

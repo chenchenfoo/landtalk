@@ -1,0 +1,22 @@
+def matirx_zero(matrix_input):
+    columnstozero={}
+    rowstozero={}
+    for rowcount,row in enumerate(matrix_input):
+        for columncount,cell in enumerate(row):
+            if cell==0:
+                columnstozero[columncount]=True
+                rowstozero[rowcount]= True
+                
+    for rowcount,row in enumerate(matrix_input):
+        for columncount,cell in enumerate(row):
+            if rowcount in rowstozero or columncount in columnstozero: 
+                matrix_input[rowcount][columncount]=0
+    return matrix_input
+    
+
+
+if __name__ == '__main__':
+    matrix1 = [[1],[2],[3]]
+    matrix2 = [[1, 2], [1, 0]]
+    print(matirx_zero(matrix1))
+    print(matirx_zero(matrix2))
